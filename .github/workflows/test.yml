@@ -38,6 +38,7 @@ jobs:
       with:
         path: ~/.cache/pypoetry/virtualenvs
         key: ${{ runner.os }}-poetry-${{ hashFiles('poetry.lock') }}-python-${{ matrix.python-version }}
+    - run: source $VENV
     - run: poetry --version
     - name: Install dependencies
       run: poetry install -E inline_persistent
